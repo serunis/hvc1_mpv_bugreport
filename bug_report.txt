@@ -1,0 +1,30 @@
+The color of HVC1 footage becomes abnormal with a specific nvdec option. --profile=default
+the sample footage is taken by Samsung galaxy s24+ with HEVC encodnig (HVC1).
+
+It plays well with
+ffplay -vcodec hevc_cuvid 20240710_121243.mp4
+mpv --hwdec=nvdec ./20240710_121243.mp4 --profile=high-quality
+mpv --hwdec=nvdec ./20240710_121243.mp4 --profile=fast
+
+However it is bad with
+mpv --hwdec=nvdec ./20240710_121243.mp4 --profile=default
+
+
+=Linux
+mpv 0.37.0 Copyright © 2000-2023 mpv/MPlayer/mplayer2 projects
+libplacebo version: v6.338.2
+FFmpeg version: 6.1.1-3ubuntu5
+FFmpeg library versions:
+   libavutil       58.29.100
+   libavcodec      60.31.102
+   libavformat     60.16.100
+   libswscale      7.5.100
+   libavfilter     9.12.100
+   libswresample   4.12.100
+
+- Platform version: linux
+- GPU model, driver and version:
+NVIDIA GeForce RTX 3090
+NVIDIA-SMI 555.52.04              Driver Version: 555.52.04      CUDA Version: 12.5 
+
+
